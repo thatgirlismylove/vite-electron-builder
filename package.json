@@ -43,6 +43,7 @@
     "happy-dom": "14.10.1",
     "nano-staged": "0.8.0",
     "playwright": "1.44.0",
+    "sass": "^1.77.0",
     "simple-git-hooks": "2.11.1",
     "typescript": "5.4.5",
     "unplugin-auto-expose": "0.3.0",
@@ -52,6 +53,7 @@
     "vue-tsc": "2.0.17"
   },
   "dependencies": {
-    "electron-updater": "6.1.8"
+    "electron-updater": "6.1.8",
+    "pinia": "^2.1.7"
   }
 }

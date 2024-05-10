@@ -1,9 +1,15 @@
 <script lang="ts" setup>
-import ReactiveCounter from '/@/components/ReactiveCounter.vue';
-import ReactiveHash from '/@/components/ReactiveHash.vue';
-import ElectronVersions from '/@/components/ElectronVersions.vue';
+import ReactiveCounter from '@/components/ReactiveCounter.vue';
+import ReactiveHash from '@/components/ReactiveHash.vue';
+import ElectronVersions from '@/components/ElectronVersions.vue';
+
+import { useCounterStore } from './stores/index';
+
+const store = useCounterStore();
 
 const APP_VERSION = import.meta.env.VITE_APP_VERSION;
+
+
 </script>
 
 <template>
@@ -30,6 +36,11 @@ const APP_VERSION = import.meta.env.VITE_APP_VERSION;
     .
   </p>
 
+  <p>
+    store count: {{ store.count }}
+    <button @click="store.increment">add</button>
+  </p>
+
   <fieldset>
     <legend>Test Vue Reactivity</legend>
     <reactive-counter />
@@ -51,13 +62,14 @@ const APP_VERSION = import.meta.env.VITE_APP_VERSION;
   </p>
 </template>
 
-<style>
+<style lang="scss">
+$color: red;
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $color;
   margin: 60px auto;
   max-width: 700px;
 }
